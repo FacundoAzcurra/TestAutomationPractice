@@ -120,26 +120,6 @@ public class WebSampleTest implements IAbstractTest {
     }
 
 
-    @Test()
-    @MethodOwner(owner = "qpsdemo")
-    @TestLabel(name = "feature", value = {"web", "acceptance"})
-    public void testHomeButton(){
-        HomePageHltv homePage = new HomePageHltv(getDriver());
-        homePage.loadPage();
-        homePage.homeButtonClick();
-        Assert.assertTrue(homePage.isPageOpened(),"Home page is not opened!");
-    }
-
-
-    @Test()
-    @MethodOwner(owner = "qpsdemo")
-    @TestLabel(name = "feature", value = {"web", "acceptance"})
-    public void testSearchFeature(){
-        HomePageHltv homePage = new HomePageHltv(getDriver());
-        homePage.loadPage();
-        homePage.search("FaZe");
-
-    }
 
 
 

@@ -13,20 +13,39 @@ import java.lang.invoke.MethodHandles;
 public class HomePageHltv extends AbstractPage {
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
+    @FindBy(id = "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll")
+    private ExtendedWebElement cookieAcceptButton;
+
+    @FindBy(xpath = "//*[@id=\"loginpopup\"]/form/button")
+    private ExtendedWebElement loginButton;
+
+    @FindBy(xpath = "//*[@id=\"loginpopup\"]/form/input[1]")
+    private ExtendedWebElement usernameButton;
+
+    @FindBy(xpath = "//*[@id=\"loginpopup\"]/form/input[2]")
+    private ExtendedWebElement passwordButton;
+
+    @FindBy(className = "navsignin")
+    private ExtendedWebElement signInButton;
+
     @FindBy(className = "hltv-logo-container")
-    private By hltvLogo;
+    private ExtendedWebElement hltvLogo;
 
     @FindBy(className = "navnews")
-    private By newsButton;
+    private ExtendedWebElement newsButton;
 
-    @FindBy(className = "navsearchinput tt-input")
-    private By navSearch;
+    @FindBy(name = "query")
+    private ExtendedWebElement navSearch;
 
     @FindBy(className = "navsearchicon")
-    private By searchButton;
+    private ExtendedWebElement searchButton;
 
     public HomePageHltv(WebDriver driver) {
         super(driver);
+    }
+
+    public void acceptCookies(){
+        cookieAcceptButton.click();
     }
 
     public void loadPage(){
@@ -34,12 +53,26 @@ public class HomePageHltv extends AbstractPage {
     }
 
     public void homeButtonClick(){
-        getDriver().findElement(hltvLogo).click();
+        hltvLogo.click();
+    }
+
+    public void loginUserPass(String phrase){
+        signInButton.click();
+
+        usernameButton.type(phrase);
+
+        passwordButton.type(phrase);
+        loginButton.click();
     }
 
     public void search(String phrase){
-        getDriver().findElement(navSearch).sendKeys(phrase);
-        getDriver().findElement(searchButton).click();
+       navSearch.click();
+       navSearch.type(phrase);
+       searchButton.click();
+    }
+
+    public void newsPageClick(){
+        newsButton.click();
     }
 
 
