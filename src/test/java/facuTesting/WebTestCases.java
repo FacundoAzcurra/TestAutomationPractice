@@ -2,7 +2,9 @@ package facuTesting;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
+import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.demo.gui.pages.hltv.HomePageHltv;
+import com.qaprosoft.carina.demo.gui.pages.hltv.MatchesPageHLTV;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -45,7 +47,7 @@ public class WebTestCases implements IAbstractTest {
     }
 
 
-    @Test(description = "Opens HLTV home page, accept cookies and click HLTV News to go to news page.")
+    @Test(description = "Opens HLTV home page, accept cookies and log in into test account")
     @MethodOwner(owner = "Facundo Azcurra")
     @TestLabel(name = "feature", value = {"web", "acceptance"})
     public void testUserLogin(){
@@ -55,4 +57,14 @@ public class WebTestCases implements IAbstractTest {
         homePage.loginUserPass("testfacu");
         Assert.assertTrue(homePage.isUrlAsExpected("https://www.hltv.org/"));
         }
+
+    @Test(description = "Opens HLTV matches page, accept cookies and click the match that is about to begin or being played.")
+    @MethodOwner(owner = "Facundo Azcurra")
+    @TestLabel(name = "feature", value = {"web", "acceptance"})
+    public void testMatchesClick(){
+        MatchesPageHLTV matchPage = new MatchesPageHLTV(getDriver());
+        matchPage.loadPage();
+        matchPage.acceptCookies();
+        matchPage.matchSelector();
+    }
 }

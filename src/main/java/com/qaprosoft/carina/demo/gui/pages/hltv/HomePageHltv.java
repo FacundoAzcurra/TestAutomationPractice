@@ -58,9 +58,7 @@ public class HomePageHltv extends AbstractPage {
 
     public void loginUserPass(String phrase){
         signInButton.click();
-
         usernameButton.type(phrase);
-
         passwordButton.type(phrase);
         loginButton.click();
     }
