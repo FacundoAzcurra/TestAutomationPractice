@@ -2,18 +2,16 @@ package facuTesting;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
-import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
+import com.qaprosoft.carina.demo.gui.pages.google.GoogleHome;
+import com.qaprosoft.carina.demo.gui.pages.hltv.DataProviderGoogle;
 import com.qaprosoft.carina.demo.gui.pages.hltv.DataProviderHLTV;
 import com.qaprosoft.carina.demo.gui.pages.hltv.HomePageHltv;
 import com.qaprosoft.carina.demo.gui.pages.hltv.MatchesPageHLTV;
 import com.qaprosoft.carina.demo.gui.pages.hltv.components.FooterMenuHLTV;
 import com.zebrunner.agent.core.annotation.TestLabel;
-import org.apache.poi.util.SystemOutLogger;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import javax.xml.crypto.Data;
 
 public class WebTestCases implements IAbstractTest {
 
@@ -40,6 +38,7 @@ public class WebTestCases implements IAbstractTest {
         Assert.assertTrue(homePage.isUrlAsExpected("https://www.hltv.org/search?query=FaZe"));
 
     }
+
 
     @Test(description = "Opens HLTV home page, accept cookies and click HLTV News to go to news page.")
     @MethodOwner(owner = "FacundoAzcurra")
@@ -88,13 +87,20 @@ public class WebTestCases implements IAbstractTest {
     @Test(description = "Load home page, clicks on search bar, search a team.",dataProvider = "searcher",dataProviderClass = DataProviderHLTV.class)
     @MethodOwner(owner = "FacundoAzcurra")
     @TestLabel(name = "feature", value = {"web", "acceptance"})
-    public void searchTestDP(String phrase) throws InterruptedException {
+    public void searchTestDP(String phrase){
         HomePageHltv homePage = new HomePageHltv(getDriver());
         homePage.loadPage();
         homePage.acceptCookies();
         homePage.searchWithDp(phrase);
     }
 
+    @Test(description = "google search with many things.",dataProvider = "items",dataProviderClass = DataProviderGoogle.class)
+    @MethodOwner(owner = "FacundoAzcurra")
+    public void searchGoogleDP(String phrase){
+        GoogleHome gogHome = new GoogleHome(getDriver());
+        gogHome.loadPage();
+        gogHome.searchWithDp(phrase);
+    }
 
     @Test(description = "Testing UI Components with footer menu links.")
     @MethodOwner(owner = "FacundoAzcurra")

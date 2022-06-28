@@ -24,8 +24,6 @@ public class FooterMenuHLTV extends AbstractUIObject {
     @FindBy(xpath = "//a[@href='https://www.twitter.com/HLTVorg']")
     private ExtendedWebElement twitterButton;
 
-
-
     public FooterMenuHLTV(WebDriver driver) {
         super(driver);
     }
