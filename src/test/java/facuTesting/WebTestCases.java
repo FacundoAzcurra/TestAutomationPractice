@@ -3,7 +3,7 @@ package facuTesting;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import com.qaprosoft.carina.demo.gui.pages.google.GoogleHome;
-import com.qaprosoft.carina.demo.gui.pages.hltv.DataProviderGoogle;
+import com.qaprosoft.carina.demo.gui.pages.google.DataProviderGoogle;
 import com.qaprosoft.carina.demo.gui.pages.hltv.DataProviderHLTV;
 import com.qaprosoft.carina.demo.gui.pages.hltv.HomePageHltv;
 import com.qaprosoft.carina.demo.gui.pages.hltv.MatchesPageHLTV;

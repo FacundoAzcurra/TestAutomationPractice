@@ -1,4 +1,4 @@
-package com.qaprosoft.carina.demo.gui.pages.hltv;
+package com.qaprosoft.carina.demo.gui.pages.google;
 
 import org.testng.annotations.DataProvider;
 
