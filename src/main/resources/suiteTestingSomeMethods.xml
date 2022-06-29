@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuiteMethod" guice-stage="DEVELOPMENT" parallel="classes">
+    <test thread-count="2" name="WebTestCases" verbose="2">
+        <classes>
+            <class name="facuTesting.WebTestCases"/>
+            <methods>
+                <include name="testFooterMenu"/>
+                <include name="testMatchesClick"/>
+            </methods>
+        </classes>
+    </test>
+</suite>
