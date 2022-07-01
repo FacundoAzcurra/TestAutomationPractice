@@ -15,20 +15,19 @@
  */
 package com.qaprosoft.carina.demo.gui.pages;
 
-import java.lang.invoke.MethodHandles;
-import java.util.List;
-
 import com.qaprosoft.carina.core.foundation.utils.Configuration;
 import com.qaprosoft.carina.core.foundation.utils.R;
+import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
+import com.qaprosoft.carina.core.gui.AbstractPage;
+import com.qaprosoft.carina.demo.gui.components.FooterMenu;
+import com.qaprosoft.carina.demo.gui.components.WeValuePrivacyAd;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
-import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.qaprosoft.carina.demo.gui.components.FooterMenu;
-import com.qaprosoft.carina.demo.gui.components.WeValuePrivacyAd;
+import java.lang.invoke.MethodHandles;
+import java.util.List;
 
 
 public class HomePage extends AbstractPage {
@@ -65,8 +64,8 @@ public class HomePage extends AbstractPage {
         }
         throw new RuntimeException("Unable to open brand: " + brand);
     }
-    
+
     public WeValuePrivacyAd getWeValuePrivacyAd() {
-    	return new WeValuePrivacyAd(driver);
+        return new WeValuePrivacyAd(driver);
     }
 }

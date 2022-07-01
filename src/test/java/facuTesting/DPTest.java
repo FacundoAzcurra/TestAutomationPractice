@@ -14,7 +14,7 @@ public class DPTest implements IAbstractTest {
     @TestRailCases(testCasesId = "1")
     @XlsDataSourceParameters(path = "xls/facu.xlsx", sheet = "1", dsUid = "TUID", testRailColumn = "a")
     @MethodOwner(owner = "FacundoAzcurra")
-    public void testGoogleDPExcel(HashMap<String, String> data){
+    public void testGoogleDPExcel(HashMap<String, String> data) {
         GoogleHome gogHome = new GoogleHome(getDriver());
         gogHome.loadPage();
         gogHome.searchWithDp(data.get("a"));

@@ -4,11 +4,8 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class FooterMenuHLTV extends AbstractUIObject {
 
@@ -28,23 +25,23 @@ public class FooterMenuHLTV extends AbstractUIObject {
         super(driver);
     }
 
-    public void majorButtonClick(){
-        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+    public void majorButtonClick() {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(0));
         majorButton.click();
     }
 
-    public void contactButtonClick(){
+    public void contactButtonClick() {
         contactButton.click();
     }
 
-    public void jobsButtonClick(){
+    public void jobsButtonClick() {
         jobsButton.click();
     }
 
-    public void twitterButtonClick(){
+    public void twitterButtonClick() {
         twitterButton.click();
-        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
     }
 }

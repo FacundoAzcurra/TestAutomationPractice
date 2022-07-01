@@ -19,15 +19,16 @@ public class MatchesPageHLTV extends AbstractPage {
     public MatchesPageHLTV(WebDriver driver) {
         super(driver);
     }
-    public void loadPage(){
+
+    public void loadPage() {
         getDriver().get("https://www.hltv.org/matches");
     }
 
-    public void acceptCookies(){
+    public void acceptCookies() {
         cookieAcceptButton.click();
     }
 
-    public void matchSelector(){
+    public void matchSelector() {
         closestMatch.click();
     }
 

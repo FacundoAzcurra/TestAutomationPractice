@@ -15,16 +15,6 @@
  */
 package com.qaprosoft.carina.demo;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.invoke.MethodHandles;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import com.qaprosoft.carina.browsermobproxy.ProxyPool;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.utils.R;
@@ -32,9 +22,17 @@ import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import com.qaprosoft.carina.demo.gui.pages.HomePage;
 import com.qaprosoft.carina.demo.gui.pages.NewsPage;
 import com.zebrunner.agent.core.registrar.Artifact;
-
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.proxy.CaptureType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
+import java.lang.invoke.MethodHandles;
 
 /**
  * This sample shows how generate har file with proxied Web test content.
@@ -47,8 +45,7 @@ public class ProxySampleTest implements IAbstractTest {
     BrowserMobProxy proxy;
 
     @BeforeMethod(alwaysRun = true)
-    public void startProxy()
-    {
+    public void startProxy() {
         R.CONFIG.put("browsermob_proxy", "true");
         getDriver();
         proxy = ProxyPool.getProxy();

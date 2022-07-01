@@ -100,7 +100,7 @@ public class APISampleTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "qpsdemo")
     @TestPriority(Priority.P1)
-    public void testPostPosts(){
+    public void testPostPosts() {
         PostPostsMethod postPostsMethod = new PostPostsMethod();
         postPostsMethod.callAPIExpectSuccess();
         postPostsMethod.validateResponse();
@@ -109,7 +109,7 @@ public class APISampleTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "qpsdemo")
     @TestPriority(Priority.P1)
-    public void testPatchPost(){
+    public void testPatchPost() {
         PatchPostsMethod patchPostsMethod = new PatchPostsMethod();
         patchPostsMethod.callAPIExpectSuccess();
         patchPostsMethod.validateResponse();

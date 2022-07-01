@@ -3,8 +3,6 @@ package facuTesting;
 import com.qaprosoft.apitools.validation.JsonCompareKeywords;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
-import com.qaprosoft.carina.core.foundation.utils.tag.Priority;
-import com.qaprosoft.carina.core.foundation.utils.tag.TestPriority;
 import com.qaprosoft.carina.demo.api.*;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.annotations.Test;
@@ -38,7 +36,7 @@ public class APITestCases implements IAbstractTest {
 
     @Test(description = "Post posts method test")
     @MethodOwner(owner = "Facundo Azcurra")
-    public void testPostPosts(){
+    public void testPostPosts() {
         PostPostsMethod postPostsMethod = new PostPostsMethod();
         postPostsMethod.callAPIExpectSuccess();
         postPostsMethod.validateResponse();
@@ -46,7 +44,7 @@ public class APITestCases implements IAbstractTest {
 
     @Test(description = "Patch posts method test")
     @MethodOwner(owner = "Facundo Azcurra")
-    public void testPatchPost(){
+    public void testPatchPost() {
         PatchPostsMethod patchPostsMethod = new PatchPostsMethod();
         patchPostsMethod.callAPIExpectSuccess();
         patchPostsMethod.validateResponse();

@@ -7,8 +7,8 @@ public class DataProviderGoogle {
     }
 
     @DataProvider(name = "items")
-    public Object[][] searchData(){
-        Object[][]data ={{"SOLVD"},{"Zebrunner"},{"Carina"},{"TestNG"},{"myBatis"}};
+    public Object[][] searchData() {
+        Object[][] data = {{"SOLVD"}, {"Zebrunner"}, {"Carina"}, {"TestNG"}, {"myBatis"}};
         return data;
     }
 }

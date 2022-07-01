@@ -3,7 +3,7 @@
 <suite name="Test Suite" guice-stage="DEVELOPMENT" parallel="classes">
     <test thread-count="2" name="WebTestCases" verbose="2">
         <classes>
-            <class name="facuTesting.WebTestCases" />
+            <class name="facuTesting.WebTestCases"/>
         </classes>
     </test>
 </suite>

@@ -2,10 +2,7 @@ package com.qaprosoft.carina.demo.gui.pages.google;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,15 +41,15 @@ public class GoogleHome extends AbstractPage {
         super(driver);
     }
 
-    public void loadPage(){
+    public void loadPage() {
         getDriver().get("https://www.google.com");
     }
 
-    public void clickGoogleLogo(){
+    public void clickGoogleLogo() {
         googleLogo.click();
     }
 
-    public void googleApps(){
+    public void googleApps() {
         driver.navigate().to("youtube.com");
         youtubeSearchBar.type("Rick Astley - Never gonna give you up");
         youtubeSearchButton.click();
@@ -65,7 +62,7 @@ public class GoogleHome extends AbstractPage {
 
     }
 
-    public void searchWithDp(String phrase){
+    public void searchWithDp(String phrase) {
         searchBar.click();
         searchBar.type(phrase);
         searchButton.click();

@@ -5,7 +5,7 @@
     </properties>
     <appenders>
         <ReportingAppender name="ReportingAppender">
-            <PatternLayout pattern="${pattern}" />
+            <PatternLayout pattern="${pattern}"/>
         </ReportingAppender>
     </appenders>
     <loggers>

@@ -15,25 +15,24 @@
  */
 package com.qaprosoft.carina.demo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
-
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.zebrunner.agent.core.annotation.TestLabel;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import com.qaprosoft.carina.demo.gui.components.FooterMenu;
 import com.qaprosoft.carina.demo.gui.components.compare.ModelSpecs;
 import com.qaprosoft.carina.demo.gui.components.compare.ModelSpecs.SpecType;
 import com.qaprosoft.carina.demo.gui.pages.CompareModelsPage;
 import com.qaprosoft.carina.demo.gui.pages.HomePage;
+import com.zebrunner.agent.core.annotation.TestLabel;
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This sample shows how create Web test with dependent methods which shares existing driver between methods.
- * 
+ *
  * @author qpsdemo
  */
 public class WebSampleSingleDriver implements IAbstractTest {
@@ -46,7 +45,7 @@ public class WebSampleSingleDriver implements IAbstractTest {
         // Open GSM Arena home page and verify page is opened
         homePage = new HomePage(getDriver());
     }
-    
+
     @Test
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "regression"})
@@ -54,8 +53,8 @@ public class WebSampleSingleDriver implements IAbstractTest {
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
     }
-    
-    @Test(dependsOnMethods="testOpenPage") //for dependent tests Carina keeps driver sessions by default
+
+    @Test(dependsOnMethods = "testOpenPage") //for dependent tests Carina keeps driver sessions by default
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testOpenCompare() {
@@ -66,16 +65,16 @@ public class WebSampleSingleDriver implements IAbstractTest {
         comparePage = footerMenu.openComparePage();
 
     }
-    
-    @Test(dependsOnMethods="testOpenCompare") //for dependent tests Carina keeps driver sessions by default
+
+    @Test(dependsOnMethods = "testOpenCompare") //for dependent tests Carina keeps driver sessions by default
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testReadSpecs() {
         // Compare 3 models
         specs = comparePage.compareModels("Samsung Galaxy J3", "Samsung Galaxy J5", "Samsung Galaxy J7 Pro");
     }
-    
-    @Test(dependsOnMethods="testReadSpecs") //for dependent tests Carina keeps driver sessions by default
+
+    @Test(dependsOnMethods = "testReadSpecs") //for dependent tests Carina keeps driver sessions by default
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "acceptance"})
     public void testCompareModels() {

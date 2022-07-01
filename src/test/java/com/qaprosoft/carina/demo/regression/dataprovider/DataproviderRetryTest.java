@@ -15,14 +15,13 @@
  */
 package com.qaprosoft.carina.demo.regression.dataprovider;
 
-import java.util.Random;
-
+import com.qaprosoft.carina.core.foundation.IAbstractTest;
+import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
+import java.util.Random;
 
 /**
  * Carina regression test with retries and it's registration in Zafira.
@@ -31,18 +30,6 @@ import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
  * @author qpsdemo
  */
 public class DataproviderRetryTest implements IAbstractTest {
-    @Test(dataProvider = "DP1")
-    @MethodOwner(owner = "qpsdemo")
-    public void testDataproviderRetry(String testRailColumn, int a, int b, int c) {
-        boolean isPassed = (new Random().nextInt(2) == 1) ? true : false;
-        Assert.assertTrue(isPassed);
-
-        setCases(testRailColumn.split(","));
-        int actual = a * b;
-        int expected = c;
-        Assert.assertEquals(actual, expected, "Invalid sum result!");
-    }
-
     @DataProvider(parallel = false, name = "DP1")
     public static Object[][] dataprovider() {
         return new Object[][]{
@@ -56,6 +43,18 @@ public class DataproviderRetryTest implements IAbstractTest {
                 {"114", 6, 6, 36},
                 {"111,112", 2, 3, 6},
                 {"114", 6, 6, 36}};
+    }
+
+    @Test(dataProvider = "DP1")
+    @MethodOwner(owner = "qpsdemo")
+    public void testDataproviderRetry(String testRailColumn, int a, int b, int c) {
+        boolean isPassed = (new Random().nextInt(2) == 1) ? true : false;
+        Assert.assertTrue(isPassed);
+
+        setCases(testRailColumn.split(","));
+        int actual = a * b;
+        int expected = c;
+        Assert.assertEquals(actual, expected, "Invalid sum result!");
     }
 
 

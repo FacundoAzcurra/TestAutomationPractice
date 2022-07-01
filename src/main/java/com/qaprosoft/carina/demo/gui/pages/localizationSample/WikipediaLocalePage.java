@@ -15,14 +15,13 @@
  */
 package com.qaprosoft.carina.demo.gui.pages.localizationSample;
 
-import java.util.List;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.annotations.Localized;
 import com.qaprosoft.carina.core.gui.AbstractPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class WikipediaLocalePage extends AbstractPage {
 
@@ -49,33 +48,33 @@ public class WikipediaLocalePage extends AbstractPage {
     @FindBy(linkText = "{L10N:discussionElem}")
     private ExtendedWebElement discussionBtn;
 
-    public String getDiscussionText(){
+    public WikipediaLocalePage(WebDriver driver) {
+        super(driver);
+    }
+
+    public String getDiscussionText() {
         if (discussionBtn.isPresent()) {
             return discussionBtn.getText();
         }
         return "";
     }
 
-    public WikipediaLocalePage(WebDriver driver) {
-        super(driver);
-    }
-
-    public String getWelcomeText(){
+    public String getWelcomeText() {
         if (welcomeText.isPresent()) {
             return welcomeText.getText();
         }
         return "";
     }
 
-    public void hoverWelcomeText(){
+    public void hoverWelcomeText() {
         welcomeText.hover();
     }
 
-    public void hoverContribElem(){
+    public void hoverContribElem() {
         contribElem.hover();
     }
 
-    public void hoverCreateAccountElem(){
+    public void hoverCreateAccountElem() {
         createAccountElem.hover();
     }
 
@@ -83,8 +82,8 @@ public class WikipediaLocalePage extends AbstractPage {
         discussionElem.click();
     }
 
-    public void hoverHeaders(){
-        for (ExtendedWebElement pageLink: pageLinks) {
+    public void hoverHeaders() {
+        for (ExtendedWebElement pageLink : pageLinks) {
             pageLink.hover();
         }
     }

@@ -15,17 +15,7 @@
  */
 package com.qaprosoft.carina.demo;
 
-import java.util.List;
-
-import com.qaprosoft.carina.demo.gui.pages.hltv.HomePageHltv;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.zebrunner.agent.core.annotation.TestLabel;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import com.qaprosoft.carina.core.foundation.utils.tag.Priority;
 import com.qaprosoft.carina.core.foundation.utils.tag.TestPriority;
@@ -33,11 +23,15 @@ import com.qaprosoft.carina.demo.gui.components.FooterMenu;
 import com.qaprosoft.carina.demo.gui.components.NewsItem;
 import com.qaprosoft.carina.demo.gui.components.compare.ModelSpecs;
 import com.qaprosoft.carina.demo.gui.components.compare.ModelSpecs.SpecType;
-import com.qaprosoft.carina.demo.gui.pages.BrandModelsPage;
-import com.qaprosoft.carina.demo.gui.pages.CompareModelsPage;
-import com.qaprosoft.carina.demo.gui.pages.HomePage;
-import com.qaprosoft.carina.demo.gui.pages.ModelInfoPage;
-import com.qaprosoft.carina.demo.gui.pages.NewsPage;
+import com.qaprosoft.carina.demo.gui.pages.*;
+import com.zebrunner.agent.core.annotation.TestLabel;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import java.util.List;
 
 /**
  * This sample shows how create Web test.
@@ -54,10 +48,10 @@ public class WebSampleTest implements IAbstractTest {
         HomePage homePage = new HomePage(getDriver());
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        
+
         //Closing advertising if it's displayed
         homePage.getWeValuePrivacyAd().closeAdIfPresent();
-        
+
         // Select phone brand
         homePage = new HomePage(getDriver());
         BrandModelsPage productsPage = homePage.selectBrand("Samsung");
@@ -95,7 +89,7 @@ public class WebSampleTest implements IAbstractTest {
         softAssert.assertEquals(specs.get(2).readSpec(SpecType.ANNOUNCED), "2017, June");
         softAssert.assertAll();
     }
-    
+
     @Test()
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "acceptance"})
@@ -103,24 +97,21 @@ public class WebSampleTest implements IAbstractTest {
         HomePage homePage = new HomePage(getDriver());
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
-        
+
         NewsPage newsPage = homePage.getFooterMenu().openNewsPage();
         Assert.assertTrue(newsPage.isPageOpened(), "News page is not opened!");
-        
+
         final String searchQ = "iphone";
         List<NewsItem> news = newsPage.searchNews(searchQ);
         Assert.assertFalse(CollectionUtils.isEmpty(news), "News not found!");
         SoftAssert softAssert = new SoftAssert();
-        for(NewsItem n : news) {
+        for (NewsItem n : news) {
             System.out.println(n.readTitle());
             softAssert.assertTrue(StringUtils.containsIgnoreCase(n.readTitle(), searchQ),
                     "Invalid search results for " + n.readTitle());
         }
         softAssert.assertAll();
     }
-
-
-
 
 
 }

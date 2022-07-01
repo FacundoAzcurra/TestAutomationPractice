@@ -15,22 +15,21 @@
  */
 package com.qaprosoft.carina.demo.regression.dataprovider;
 
-import java.lang.invoke.MethodHandles;
-import java.util.Random;
-
+import com.qaprosoft.carina.core.foundation.IAbstractTest;
+import com.qaprosoft.carina.core.foundation.dataprovider.annotations.XlsDataSourceParameters;
+import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.qaprosoft.carina.core.foundation.dataprovider.annotations.XlsDataSourceParameters;
-import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
+import java.lang.invoke.MethodHandles;
+import java.util.Random;
 
 
 public class XlsDataproviderRetryTest implements IAbstractTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-    
+
     @Test(dataProvider = "DataProvider")
     @MethodOwner(owner = "qpsdemo")
     @XlsDataSourceParameters(path = "xls/demo.xlsx", sheet = "Data", dsUid = "TestTitle", dsArgs = "Args")
@@ -39,5 +38,5 @@ public class XlsDataproviderRetryTest implements IAbstractTest {
         boolean isPassed = (new Random().nextInt(3) == 1) ? true : false;
         Assert.assertTrue(isPassed);
     }
-    
+
 }

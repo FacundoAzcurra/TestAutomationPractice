@@ -1,14 +1,11 @@
 package com.qaprosoft.carina.demo.gui.pages.hltv;
 
-import com.itextpdf.text.Phrase;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.DataProvider;
 
 import java.lang.invoke.MethodHandles;
 
@@ -46,43 +43,43 @@ public class HomePageHltv extends AbstractPage {
         super(driver);
     }
 
-    public void acceptCookies(){
+    public void acceptCookies() {
         cookieAcceptButton.click();
     }
 
-    public void loadPage(){
+    public void loadPage() {
         getDriver().get("https://www.hltv.org");
     }
 
-    public void homeButtonClick(){
+    public void homeButtonClick() {
         hltvLogo.click();
     }
 
-    public void loginUserPass(String phrase){
+    public void loginUserPass(String phrase) {
         signInButton.click();
         usernameButton.type(phrase);
         passwordButton.type(phrase);
         loginButton.click();
     }
 
-    public void search(String phrase){
-       navSearch.click();
-       navSearch.type(phrase);
-       searchButton.click();
+    public void search(String phrase) {
+        navSearch.click();
+        navSearch.type(phrase);
+        searchButton.click();
     }
 
-    public void newsPageClick(){
+    public void newsPageClick() {
         newsButton.click();
     }
 
-    public void searchWithDp(String phrase){
+    public void searchWithDp(String phrase) {
         navSearch.click();
         navSearch.type(phrase);
         searchButton.click();
     }
 
 
-    public void loginWithDP(String user, String pass){
+    public void loginWithDP(String user, String pass) {
         signInButton.click();
         usernameButton.type(user);
         passwordButton.type(pass);

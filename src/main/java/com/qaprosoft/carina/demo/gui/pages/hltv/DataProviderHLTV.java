@@ -9,19 +9,17 @@ public class DataProviderHLTV {
     }
 
     @DataProvider(name = "userpass")
-    public Object[][] loginData(){
-        Object[][]data ={{"testfacu","testfacu"}};
+    public Object[][] loginData() {
+        Object[][] data = {{"testfacu", "testfacu"}};
         return data;
     }
 
 
     @DataProvider(name = "searcher")
-    public Object[][] search(){
-        Object[][] data ={{"9z"},{"FaZe"},{"Cloud9"},{"Heroic"},{"Isurus"},{"BIG"}};
+    public Object[][] search() {
+        Object[][] data = {{"9z"}, {"FaZe"}, {"Cloud9"}, {"Heroic"}, {"Isurus"}, {"BIG"}};
         return data;
     }
-
-
 
 
 }

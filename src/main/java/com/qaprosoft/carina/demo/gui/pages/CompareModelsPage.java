@@ -15,17 +15,16 @@
  */
 package com.qaprosoft.carina.demo.gui.pages;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
 import com.qaprosoft.carina.demo.gui.components.compare.CondidateBlock;
 import com.qaprosoft.carina.demo.gui.components.compare.ModelSpecs;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompareModelsPage extends AbstractPage {
 

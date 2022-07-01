@@ -15,13 +15,12 @@
  */
 package com.qaprosoft.carina.demo.gui.pages;
 
-import java.util.List;
-
+import com.qaprosoft.carina.core.gui.AbstractPage;
+import com.qaprosoft.carina.demo.gui.components.ModelItem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.qaprosoft.carina.demo.gui.components.ModelItem;
+import java.util.List;
 
 public class BrandModelsPage extends AbstractPage {
     @FindBy(xpath = "//div[@id='review-body']//li")

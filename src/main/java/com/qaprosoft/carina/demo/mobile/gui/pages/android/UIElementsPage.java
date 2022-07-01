@@ -1,12 +1,11 @@
 package com.qaprosoft.carina.demo.mobile.gui.pages.android;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-
 import com.qaprosoft.carina.core.foundation.utils.factory.DeviceType;
 import com.qaprosoft.carina.core.foundation.utils.mobile.IMobileUtils;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.demo.mobile.gui.pages.common.UIElementsPageBase;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = UIElementsPageBase.class)
 public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
@@ -53,17 +52,17 @@ public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
     }
 
     @Override
-    public String getEmail(){
+    public String getEmail() {
         return emailField.getText();
     }
 
     @Override
-    public String getText(){
+    public String getText() {
         return textField.getText();
     }
 
     @Override
-    public String getDate(){
+    public String getDate() {
         return dateField.getText();
     }
 
@@ -88,12 +87,12 @@ public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
     }
 
     @Override
-    public boolean isFemaleRadioButtonSelected(){
+    public boolean isFemaleRadioButtonSelected() {
         return femaleRadioButton.isChecked();
     }
 
     @Override
-    public boolean isOthersRadioButtonSelected(){
+    public boolean isOthersRadioButtonSelected() {
         return otherRadioButton.isChecked();
     }
 
@@ -103,7 +102,7 @@ public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
     }
 
     @Override
-    public boolean isCopyChecked(){
+    public boolean isCopyChecked() {
         return checkBoxButton.isChecked();
     }
 

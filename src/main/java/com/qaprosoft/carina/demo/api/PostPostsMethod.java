@@ -23,7 +23,6 @@ import com.qaprosoft.carina.core.foundation.api.annotation.SuccessfulHttpStatus;
 import com.qaprosoft.carina.core.foundation.api.http.HttpMethodType;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.qaprosoft.carina.core.foundation.utils.Configuration;
-import io.restassured.http.Header;
 
 @Endpoint(url = "${base_url}/posts", methodType = HttpMethodType.POST)
 @RequestTemplatePath(path = "api/posts/_post/rq.json")
