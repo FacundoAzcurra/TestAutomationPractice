@@ -29,7 +29,6 @@ public class APITestCases implements IAbstractTest {
 
     @Test(description = "Delete posts method test")
     @MethodOwner(owner = "Facundo Azcurra")
-    @TestPriority(Priority.P1)
     public void testDeletePosts() {
         DeletePostMethod deletePostMethod = new DeletePostMethod();
         deletePostMethod.setProperties("api/posts/post.properties");
@@ -39,7 +38,6 @@ public class APITestCases implements IAbstractTest {
 
     @Test(description = "Post posts method test")
     @MethodOwner(owner = "Facundo Azcurra")
-    @TestPriority(Priority.P1)
     public void testPostPosts(){
         PostPostsMethod postPostsMethod = new PostPostsMethod();
         postPostsMethod.callAPIExpectSuccess();
@@ -48,7 +46,6 @@ public class APITestCases implements IAbstractTest {
 
     @Test(description = "Patch posts method test")
     @MethodOwner(owner = "Facundo Azcurra")
-    @TestPriority(Priority.P1)
     public void testPatchPost(){
         PatchPostsMethod patchPostsMethod = new PatchPostsMethod();
         patchPostsMethod.callAPIExpectSuccess();
